@@ -1,0 +1,26 @@
+{
+  "name": "rpgwebsite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "./node_modules/.bin/eslint './assets/js/*.js' --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nekohime/rpgwebsite.git"
+  },
+  "author": "Nekohime",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/Nekohime/rpgwebsite/issues"
+  },
+  "homepage": "https://github.com/Nekohime/rpgwebsite#readme",
+  "devDependencies": {
+    "eslint": "^8.44.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-vue": "^9.15.1"
+  }
+}

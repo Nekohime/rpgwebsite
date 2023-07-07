@@ -1,0 +1,14 @@
+{
+  "name": "html5-starter",
+  "short_name": "h5s",
+  "background_color": "black",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone"
+}

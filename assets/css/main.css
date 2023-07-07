@@ -1,0 +1,147 @@
+/*
+License: CC0 (See LICENSE file)
+
+Layout Properties (position, float, clear, display)
+Box Model Properties (width, height, margin, padding)
+Visual Properties (color, background, border, box-shadow)
+Typography Properties (font-size, font-family, text-align, text-transform)
+Misc Properties (cursor, overflow, z-index)
+*/
+
+@font-face {
+  /*
+  * Author: codeman38 @ http://www.zone38.net/font/
+  * License can be found in the /assets/fonts/LICENSE-kongtext.txt file
+  */
+  font-family: kongtext;
+  src: url("../fonts/kongtext.ttf") format("truetype");
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+:root {
+  --link-default: #fff;
+  --link-hover: #fff;
+  --text-default: #fff;
+  --rainbow: linear-gradient(90deg, red, orange, yellow, green, blue, purple);
+  --rainbowish: linear-gradient(90deg, red, orange, yellow, green);
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: #000;
+  color: var(--text-default);
+  font-display: swap;
+  font-family: kongtext, Hack, Roboto, "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Arial, Helvetica, sans-serif, Webdings;
+  font-size: 1.2em;
+  overflow: hidden;
+}
+
+a:link, a:visited {
+  color: var(--link-default);
+  text-decoration: none;
+
+  background: var(--rainbowish);
+  background-clip: text;
+  margin: auto;
+}
+aside a:link::before {
+  content: "* ";
+}
+
+a:hover, a:active {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+aside a:hover {
+  color: transparent;
+  transition: 500ms ease;
+}
+aside a:hover::before {
+  content:"> ";
+}
+
+header, main, footer {
+  /* :) */
+}
+
+.hcenter-div {
+  margin: 0 auto;
+}
+
+/* stylelint-disable declaration-block-no-redundant-longhand-properties */
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: 256px 3fr 1fr;
+  grid-template-rows: 0.4fr 3fr 1fr 0.4fr;
+  gap: 6px 6px;
+  grid-template-areas:
+    "header header header"
+    "sidebar main main"
+    "sidebar2 main main"
+    "footer footer footer";
+  height: 95%;
+  width: 95%;
+
+}
+
+/* stylelint-enable declaration-block-no-redundant-longhand-properties */
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.sidebar2 {
+  grid-area: sidebar2;
+}
+
+footer {
+  grid-area: footer;
+}
+
+.container {
+  position: relative;
+  background-image: linear-gradient(#0D2289, #06093B);
+  background-position: 50%;
+  border: 2px solid white;
+  border-radius: 7px;
+  padding: 10px;
+  border-style:  solid;
+  overflow-y: auto;
+}
+
+/* stylelint-disable media-feature-range-notation */
+
+/* Media Queries (should be the last section in the file) */
+
+@media all and (max-width: 1200px) {
+    header, main, footer {
+      /* TODO: Mobile Grid */
+
+      /* width: ??%; */
+    }
+}
