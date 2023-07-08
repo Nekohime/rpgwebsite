@@ -2,16 +2,23 @@
 
 const timeEl = document.querySelector('.time-now');
 
+/** Main function */
 function main() {
   setInterval(() => {
-    displayTime();
+    timeEl.innerHTML = getFormattedTime();
   }, 100);
 }
 
-function displayTime() {
+/**
+  * @return {string} returns formatted time
+*/
+function getFormattedTime() {
   const dateTime = new Date();
-  const time = dateTime.getHours() + ':' + dateTime.getMinutes() + ':' + dateTime.getSeconds();
-  timeEl.innerHTML = time;
+  const hours = dateTime.getHours().toString().padStart(2, '0');
+  const minutes = dateTime.getMinutes().toString().padStart(2, '0');
+  const seconds = dateTime.getSeconds().toString().padStart(2, '0');
+
+  return `${hours}:${minutes}:${seconds}`;
 }
 
 
